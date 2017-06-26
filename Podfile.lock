@@ -1,0 +1,33 @@
+PODS:
+  - Gallery (1.2.0)
+  - Hue (2.0.1)
+  - Lightbox (1.0.0):
+    - Hue
+  - RxCocoa (3.5.0):
+    - RxSwift (~> 3.4)
+  - RxGesture (1.0.1):
+    - RxCocoa (~> 3.4)
+    - RxSwift (~> 3.4)
+  - RxSwift (3.5.0)
+  - SnapKit (3.2.0)
+
+DEPENDENCIES:
+  - Gallery
+  - Lightbox
+  - RxCocoa
+  - RxGesture
+  - RxSwift
+  - SnapKit
+
+SPEC CHECKSUMS:
+  Gallery: 925b8133efa9d8fe933918f242b64110c6478b98
+  Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
+  Lightbox: 13f55a0a840f7945dc5ac87931564e7fe569fca9
+  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
+  RxGesture: 1f770b247c69e8133fb8f4ef263571efd0ae91a1
+  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+
+PODFILE CHECKSUM: cd2de66001b8e1b2bd5dc8c1252736b8d046bc65
+
+COCOAPODS: 1.2.0.rc.1

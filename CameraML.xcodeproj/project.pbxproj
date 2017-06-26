@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16A5D15CE0758C73F6483F05 /* Pods_CameraML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102B75CD30CDAFEE7BEC512C /* Pods_CameraML.framework */; };
+		652E92185C4F2E47BD8B82DA /* Pods_CameraMLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */; };
+		8B23CAA51F00F9080024679D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA41F00F9080024679D /* AppDelegate.swift */; };
+		8B23CAA71F00F9080024679D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA61F00F9080024679D /* ViewController.swift */; };
+		8B23CAAC1F00F9080024679D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAB1F00F9080024679D /* Assets.xcassets */; };
+		8B23CAAF1F00F9080024679D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAD1F00F9080024679D /* LaunchScreen.storyboard */; };
+		8B23CABA1F00F9080024679D /* CameraMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAB91F00F9080024679D /* CameraMLTests.swift */; };
+		8B23CAC51F00F9580024679D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAC41F00F9580024679D /* CameraController.swift */; };
+		8B23CAC71F00FF1E0024679D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAC61F00FF1E0024679D /* Router.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B23CAB61F00F9080024679D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B23CA991F00F9080024679D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B23CAA01F00F9080024679D;
+			remoteInfo = CameraML;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		102B75CD30CDAFEE7BEC512C /* Pods_CameraML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CameraML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F5B3B8C90A0653D0DEF9965 /* Pods-CameraML.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraML.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CameraML/Pods-CameraML.debug.xcconfig"; sourceTree = "<group>"; };
+		45D2796211E27E6E0DD3E325 /* Pods-CameraMLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraMLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CameraMLTests/Pods-CameraMLTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CameraMLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B23CAA11F00F9080024679D /* CameraML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraML.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B23CAA41F00F9080024679D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B23CAA61F00F9080024679D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B23CAAB1F00F9080024679D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B23CAAE1F00F9080024679D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B23CAB01F00F9080024679D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B23CAB51F00F9080024679D /* CameraMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B23CAB91F00F9080024679D /* CameraMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMLTests.swift; sourceTree = "<group>"; };
+		8B23CABB1F00F9080024679D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B23CAC41F00F9580024679D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		8B23CAC61F00FF1E0024679D /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		C894AEF5679CC9CC8EBEDD50 /* Pods-CameraML.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraML.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraML/Pods-CameraML.release.xcconfig"; sourceTree = "<group>"; };
+		FED60BC2A129CC2FE6300990 /* Pods-CameraMLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraMLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraMLTests/Pods-CameraMLTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B23CA9E1F00F9080024679D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A5D15CE0758C73F6483F05 /* Pods_CameraML.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B23CAB21F00F9080024679D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652E92185C4F2E47BD8B82DA /* Pods_CameraMLTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B23CA981F00F9080024679D = {
+			isa = PBXGroup;
+			children = (
+				8B23CAA31F00F9080024679D /* CameraML */,
+				8B23CAB81F00F9080024679D /* CameraMLTests */,
+				8B23CAA21F00F9080024679D /* Products */,
+				9114C0E836E4DDB5B18C224B /* Pods */,
+				C83F405E102B26CA75CC62A6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8B23CAA21F00F9080024679D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B23CAA11F00F9080024679D /* CameraML.app */,
+				8B23CAB51F00F9080024679D /* CameraMLTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B23CAA31F00F9080024679D /* CameraML */ = {
+			isa = PBXGroup;
+			children = (
+				8B23CAA41F00F9080024679D /* AppDelegate.swift */,
+				8B23CAC61F00FF1E0024679D /* Router.swift */,
+				8B23CAA61F00F9080024679D /* ViewController.swift */,
+				8B23CAC41F00F9580024679D /* CameraController.swift */,
+				8B23CAAB1F00F9080024679D /* Assets.xcassets */,
+				8B23CAAD1F00F9080024679D /* LaunchScreen.storyboard */,
+				8B23CAB01F00F9080024679D /* Info.plist */,
+			);
+			path = CameraML;
+			sourceTree = "<group>";
+		};
+		8B23CAB81F00F9080024679D /* CameraMLTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B23CAB91F00F9080024679D /* CameraMLTests.swift */,
+				8B23CABB1F00F9080024679D /* Info.plist */,
+			);
+			path = CameraMLTests;
+			sourceTree = "<group>";
+		};
+		9114C0E836E4DDB5B18C224B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F5B3B8C90A0653D0DEF9965 /* Pods-CameraML.debug.xcconfig */,
+				C894AEF5679CC9CC8EBEDD50 /* Pods-CameraML.release.xcconfig */,
+				45D2796211E27E6E0DD3E325 /* Pods-CameraMLTests.debug.xcconfig */,
+				FED60BC2A129CC2FE6300990 /* Pods-CameraMLTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C83F405E102B26CA75CC62A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				102B75CD30CDAFEE7BEC512C /* Pods_CameraML.framework */,
+				5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B23CAA01F00F9080024679D /* CameraML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B23CABE1F00F9080024679D /* Build configuration list for PBXNativeTarget "CameraML" */;
+			buildPhases = (
+				486F498E4E97359FAAAA5751 /* [CP] Check Pods Manifest.lock */,
+				8B23CA9D1F00F9080024679D /* Sources */,
+				8B23CA9E1F00F9080024679D /* Frameworks */,
+				8B23CA9F1F00F9080024679D /* Resources */,
+				32F25A34B3AF3F7A714C1A4D /* [CP] Embed Pods Frameworks */,
+				D69DF2C937A46DC061C15C10 /* [CP] Copy Pods Resources */,
+				8B23CAC81F010C7C0024679D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CameraML;
+			productName = CameraML;
+			productReference = 8B23CAA11F00F9080024679D /* CameraML.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B23CAB41F00F9080024679D /* CameraMLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B23CAC11F00F9080024679D /* Build configuration list for PBXNativeTarget "CameraMLTests" */;
+			buildPhases = (
+				463DD2F07B25D2BF3AAE342C /* [CP] Check Pods Manifest.lock */,
+				8B23CAB11F00F9080024679D /* Sources */,
+				8B23CAB21F00F9080024679D /* Frameworks */,
+				8B23CAB31F00F9080024679D /* Resources */,
+				155CF4E1AE3D795BD8AAAAE0 /* [CP] Embed Pods Frameworks */,
+				9549F536BA2A2AB10FE862D7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B23CAB71F00F9080024679D /* PBXTargetDependency */,
+			);
+			name = CameraMLTests;
+			productName = CameraMLTests;
+			productReference = 8B23CAB51F00F9080024679D /* CameraMLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B23CA991F00F9080024679D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Kviatkovskii;
+				TargetAttributes = {
+					8B23CAA01F00F9080024679D = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					8B23CAB41F00F9080024679D = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8B23CAA01F00F9080024679D;
+					};
+				};
+			};
+			buildConfigurationList = 8B23CA9C1F00F9080024679D /* Build configuration list for PBXProject "CameraML" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B23CA981F00F9080024679D;
+			productRefGroup = 8B23CAA21F00F9080024679D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B23CAA01F00F9080024679D /* CameraML */,
+				8B23CAB41F00F9080024679D /* CameraMLTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B23CA9F1F00F9080024679D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B23CAAF1F00F9080024679D /* LaunchScreen.storyboard in Resources */,
+				8B23CAAC1F00F9080024679D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B23CAB31F00F9080024679D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		155CF4E1AE3D795BD8AAAAE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CameraMLTests/Pods-CameraMLTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32F25A34B3AF3F7A714C1A4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CameraML/Pods-CameraML-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		463DD2F07B25D2BF3AAE342C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		486F498E4E97359FAAAA5751 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B23CAC81F010C7C0024679D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		9549F536BA2A2AB10FE862D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CameraMLTests/Pods-CameraMLTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D69DF2C937A46DC061C15C10 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CameraML/Pods-CameraML-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B23CA9D1F00F9080024679D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B23CAC71F00FF1E0024679D /* Router.swift in Sources */,
+				8B23CAC51F00F9580024679D /* CameraController.swift in Sources */,
+				8B23CAA71F00F9080024679D /* ViewController.swift in Sources */,
+				8B23CAA51F00F9080024679D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B23CAB11F00F9080024679D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B23CABA1F00F9080024679D /* CameraMLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B23CAB71F00F9080024679D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B23CAA01F00F9080024679D /* CameraML */;
+			targetProxy = 8B23CAB61F00F9080024679D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B23CAAD1F00F9080024679D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B23CAAE1F00F9080024679D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B23CABC1F00F9080024679D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B23CABD1F00F9080024679D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B23CABF1F00F9080024679D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F5B3B8C90A0653D0DEF9965 /* Pods-CameraML.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CameraML/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraML;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8B23CAC01F00F9080024679D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C894AEF5679CC9CC8EBEDD50 /* Pods-CameraML.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CameraML/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraML;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8B23CAC21F00F9080024679D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45D2796211E27E6E0DD3E325 /* Pods-CameraMLTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CameraMLTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraMLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CameraML.app/CameraML";
+			};
+			name = Debug;
+		};
+		8B23CAC31F00F9080024679D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FED60BC2A129CC2FE6300990 /* Pods-CameraMLTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CameraMLTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraMLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CameraML.app/CameraML";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B23CA9C1F00F9080024679D /* Build configuration list for PBXProject "CameraML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B23CABC1F00F9080024679D /* Debug */,
+				8B23CABD1F00F9080024679D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B23CABE1F00F9080024679D /* Build configuration list for PBXNativeTarget "CameraML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B23CABF1F00F9080024679D /* Debug */,
+				8B23CAC01F00F9080024679D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B23CAC11F00F9080024679D /* Build configuration list for PBXNativeTarget "CameraMLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B23CAC21F00F9080024679D /* Debug */,
+				8B23CAC31F00F9080024679D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B23CA991F00F9080024679D /* Project object */;
+}
