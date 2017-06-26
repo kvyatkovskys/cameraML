@@ -188,6 +188,7 @@
 				TargetAttributes = {
 					8B23CAA01F00F9080024679D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 84KS4SQJBZ;
 						ProvisioningStyle = Automatic;
 					};
 					8B23CAB41F00F9080024679D = {
@@ -481,6 +482,7 @@
 			baseConfigurationReference = 3F5B3B8C90A0653D0DEF9965 /* Pods-CameraML.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84KS4SQJBZ;
 				INFOPLIST_FILE = CameraML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraML;
@@ -494,6 +496,7 @@
 			baseConfigurationReference = C894AEF5679CC9CC8EBEDD50 /* Pods-CameraML.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84KS4SQJBZ;
 				INFOPLIST_FILE = CameraML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraML;
