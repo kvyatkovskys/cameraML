@@ -105,7 +105,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         }
         
         capturePhoto.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2))
+            make.size.equalTo(CGSize(width: view.frame.size.width - 40.0, height: view.frame.size.height / 2))
             make.center.equalToSuperview()
         }
         
