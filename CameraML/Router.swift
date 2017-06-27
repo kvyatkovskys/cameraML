@@ -22,6 +22,7 @@ final class Router {
         rootViewController.navigationBar.isTranslucent = false
     }
     
+    // показываем просмоторщик, фото в библиотеке
     func showLookPhotoLibrary(controller: UIImagePickerController, image: UIImage, delegate: LookPhotoLibraryDelegate) {
         let lookPhotoLibraryControler = LookPhotoViewController(image: image, delegate: delegate)
         controller.present(lookPhotoLibraryControler, animated: true, completion: nil)
