@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  CameraML
 //
 //  Created by Kviatkovskii on 26.06.17.
@@ -10,11 +10,48 @@ import UIKit
 import Photos
 import SnapKit
 import RxSwift
+import RxCocoa
 import Lightbox
 
-final class ViewController: UIViewController {
-
-    let cameraController = CameraController()
+final class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LookPhotoLibraryDelegate {
+    fileprivate let router: Router
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let cameraController = CameraController()
+    
+    fileprivate let imagePicker: UIImagePickerController = {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = false
+        picker.sourceType = .photoLibrary
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        return picker
+    }()
+    
+    fileprivate let capturePhoto: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        return image
+    }()
+    
+    fileprivate let cancelButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Cancel", for: .normal)
+        button.titleLabel?.textColor = UIColor.white
+        button.titleLabel?.font = UIFont.font17
+        return button
+    }()
+    
+    fileprivate lazy var blurView: UIView = {
+        let view = UIView()
+        view.isHidden = true
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+        blurEffectView.addSubview(self.capturePhoto)
+        return view
+    }()
     
     fileprivate let captureButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
@@ -49,7 +86,7 @@ final class ViewController: UIViewController {
     
     fileprivate lazy var toggleFlashButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0.0, y: 0.0, width: 25.0, height: 25.0))
-        let image = #imageLiteral(resourceName: "ic_flash_on").withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        let image = #imageLiteral(resourceName: "ic_flash_off").withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         button.setImage(image, for: .normal)
         button.tintColor = UIColor(white: 1.0, alpha: 1.0)
         button.addTarget(self, action: #selector(toggleFlash), for: UIControlEvents.touchUpInside)
@@ -60,6 +97,21 @@ final class ViewController: UIViewController {
         capturePreviewView.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
             make.left.right.equalToSuperview()
+        }
+        
+        blurView.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+        }
+        
+        capturePhoto.snp.makeConstraints { (make) in
+            make.size.equalTo(CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2))
+            make.center.equalToSuperview()
+        }
+        
+        cancelButton.snp.makeConstraints { (make) in
+            make.top.equalTo(capturePhoto.snp.bottom).offset(20.0)
+            make.left.right.equalTo(capturePhoto)
         }
         
         captureButton.snp.makeConstraints { (make) in
@@ -90,11 +142,24 @@ final class ViewController: UIViewController {
         super.updateViewConstraints()
     }
     
+    init(router: Router) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getLastPhotoFromLibrary()
+        imagePicker.delegate = self
         
         self.view.addSubview(capturePreviewView)
+        self.view.addSubview(blurView)
+        blurView.addSubview(capturePhoto)
+        blurView.addSubview(cancelButton)
         capturePreviewView.addSubview(captureButton)
         capturePreviewView.addSubview(openLibraryButton)
         capturePreviewView.addSubview(toggleCameraButton)
@@ -103,9 +168,39 @@ final class ViewController: UIViewController {
         updateConstraints()
         
         configureCameraController()
+        
+        openLibraryButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }).addDisposableTo(disposeBag)
+        
+        cancelButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.blurView.isHidden = true
+            }).addDisposableTo(disposeBag)
     }
     
+    // MARK: - Delegates Picker
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            router.showLookPhotoLibrary(controller: picker, image: chosenImage, delegate: self)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func choosePhoto(image: UIImage) {
+        capturePhoto.image = image
+        blurView.isHidden = false
+        imagePicker.popToRootViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Camera Controller
     func configureCameraController() {
+        cameraController.flashMode = .off
         cameraController.prepare { (error) in
             if let error = error {
                 print(error)
@@ -136,10 +231,12 @@ final class ViewController: UIViewController {
         
         switch cameraController.currentCameraPosition {
         case .some(.front):
-            toggleCameraButton.setImage(#imageLiteral(resourceName: "ic_switch_camera"), for: .normal)
+            let image = #imageLiteral(resourceName: "ic_switch_camera").withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            toggleCameraButton.setImage(image, for: .normal)
             
         case .some(.rear):
-            toggleCameraButton.setImage(#imageLiteral(resourceName: "ic_switch_camera"), for: .normal)
+            let image = #imageLiteral(resourceName: "ic_switch_camera").withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            toggleCameraButton.setImage(image, for: .normal)
             
         case .none:
             return
@@ -158,6 +255,7 @@ final class ViewController: UIViewController {
                     PHAssetChangeRequest.creationRequestForAsset(from: image)
                 }
                 self.getLastPhotoFromLibrary()
+                self.blurView.isHidden = false
             } catch {
                 print(error)
             }

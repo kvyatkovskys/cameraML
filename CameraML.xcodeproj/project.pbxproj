@@ -10,12 +10,25 @@
 		16A5D15CE0758C73F6483F05 /* Pods_CameraML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102B75CD30CDAFEE7BEC512C /* Pods_CameraML.framework */; };
 		652E92185C4F2E47BD8B82DA /* Pods_CameraMLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */; };
 		8B23CAA51F00F9080024679D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA41F00F9080024679D /* AppDelegate.swift */; };
-		8B23CAA71F00F9080024679D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA61F00F9080024679D /* ViewController.swift */; };
+		8B23CAA71F00F9080024679D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA61F00F9080024679D /* MainViewController.swift */; };
 		8B23CAAC1F00F9080024679D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAB1F00F9080024679D /* Assets.xcassets */; };
 		8B23CAAF1F00F9080024679D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAD1F00F9080024679D /* LaunchScreen.storyboard */; };
 		8B23CABA1F00F9080024679D /* CameraMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAB91F00F9080024679D /* CameraMLTests.swift */; };
 		8B23CAC51F00F9580024679D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAC41F00F9580024679D /* CameraController.swift */; };
 		8B23CAC71F00FF1E0024679D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAC61F00FF1E0024679D /* Router.swift */; };
+		8BD526FC1F02452900BE97C6 /* LookPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD526FB1F02452900BE97C6 /* LookPhotoViewController.swift */; };
+		8BD527001F02456300BE97C6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAC61F00FF1E0024679D /* Router.swift */; };
+		8BD527011F02456300BE97C6 /* LookPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD526FB1F02452900BE97C6 /* LookPhotoViewController.swift */; };
+		8BD527021F02456300BE97C6 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAC41F00F9580024679D /* CameraController.swift */; };
+		8BD527031F02456300BE97C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA61F00F9080024679D /* MainViewController.swift */; };
+		8BD527041F02456300BE97C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA41F00F9080024679D /* AppDelegate.swift */; };
+		8BD527061F02456300BE97C6 /* Pods_CameraML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102B75CD30CDAFEE7BEC512C /* Pods_CameraML.framework */; };
+		8BD527081F02456300BE97C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAD1F00F9080024679D /* LaunchScreen.storyboard */; };
+		8BD527091F02456300BE97C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAB1F00F9080024679D /* Assets.xcassets */; };
+		8BD527191F0247A800BE97C6 /* Color-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527171F0247A800BE97C6 /* Color-Extension.swift */; };
+		8BD5271A1F0247A800BE97C6 /* Color-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527171F0247A800BE97C6 /* Color-Extension.swift */; };
+		8BD5271B1F0247A800BE97C6 /* Font-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527181F0247A800BE97C6 /* Font-extension.swift */; };
+		8BD5271C1F0247A800BE97C6 /* Font-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527181F0247A800BE97C6 /* Font-extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +48,7 @@
 		5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CameraMLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B23CAA11F00F9080024679D /* CameraML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B23CAA41F00F9080024679D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B23CAA61F00F9080024679D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B23CAA61F00F9080024679D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8B23CAAB1F00F9080024679D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B23CAAE1F00F9080024679D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B23CAB01F00F9080024679D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +57,11 @@
 		8B23CABB1F00F9080024679D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B23CAC41F00F9580024679D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		8B23CAC61F00FF1E0024679D /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8BD526FB1F02452900BE97C6 /* LookPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookPhotoViewController.swift; sourceTree = "<group>"; };
+		8BD527101F02456300BE97C6 /* CameraML-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CameraML-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BD527111F02456300BE97C6 /* CameraML-dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CameraML-dev.plist"; path = "/Users/km/Desktop/CameraML/CameraML-dev.plist"; sourceTree = "<absolute>"; };
+		8BD527171F0247A800BE97C6 /* Color-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color-Extension.swift"; sourceTree = "<group>"; };
+		8BD527181F0247A800BE97C6 /* Font-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font-extension.swift"; sourceTree = "<group>"; };
 		C894AEF5679CC9CC8EBEDD50 /* Pods-CameraML.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraML.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraML/Pods-CameraML.release.xcconfig"; sourceTree = "<group>"; };
 		FED60BC2A129CC2FE6300990 /* Pods-CameraMLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraMLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraMLTests/Pods-CameraMLTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +80,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				652E92185C4F2E47BD8B82DA /* Pods_CameraMLTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BD527051F02456300BE97C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD527061F02456300BE97C6 /* Pods_CameraML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +110,7 @@
 			children = (
 				8B23CAA11F00F9080024679D /* CameraML.app */,
 				8B23CAB51F00F9080024679D /* CameraMLTests.xctest */,
+				8BD527101F02456300BE97C6 /* CameraML-dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,11 +120,13 @@
 			children = (
 				8B23CAA41F00F9080024679D /* AppDelegate.swift */,
 				8B23CAC61F00FF1E0024679D /* Router.swift */,
-				8B23CAA61F00F9080024679D /* ViewController.swift */,
-				8B23CAC41F00F9580024679D /* CameraController.swift */,
+				8B23CAA61F00F9080024679D /* MainViewController.swift */,
+				8BD5271F1F0247EB00BE97C6 /* Camera Controller */,
+				8BD5271E1F0247D900BE97C6 /* Look Photo From Library */,
 				8B23CAAB1F00F9080024679D /* Assets.xcassets */,
 				8B23CAAD1F00F9080024679D /* LaunchScreen.storyboard */,
-				8B23CAB01F00F9080024679D /* Info.plist */,
+				8BD5271D1F0247B500BE97C6 /* Project extensions */,
+				8BD527121F02458B00BE97C6 /* Info-plist */,
 			);
 			path = CameraML;
 			sourceTree = "<group>";
@@ -109,6 +138,40 @@
 				8B23CABB1F00F9080024679D /* Info.plist */,
 			);
 			path = CameraMLTests;
+			sourceTree = "<group>";
+		};
+		8BD527121F02458B00BE97C6 /* Info-plist */ = {
+			isa = PBXGroup;
+			children = (
+				8B23CAB01F00F9080024679D /* Info.plist */,
+				8BD527111F02456300BE97C6 /* CameraML-dev.plist */,
+			);
+			name = "Info-plist";
+			sourceTree = "<group>";
+		};
+		8BD5271D1F0247B500BE97C6 /* Project extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8BD527171F0247A800BE97C6 /* Color-Extension.swift */,
+				8BD527181F0247A800BE97C6 /* Font-extension.swift */,
+			);
+			name = "Project extensions";
+			sourceTree = "<group>";
+		};
+		8BD5271E1F0247D900BE97C6 /* Look Photo From Library */ = {
+			isa = PBXGroup;
+			children = (
+				8BD526FB1F02452900BE97C6 /* LookPhotoViewController.swift */,
+			);
+			name = "Look Photo From Library";
+			sourceTree = "<group>";
+		};
+		8BD5271F1F0247EB00BE97C6 /* Camera Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B23CAC41F00F9580024679D /* CameraController.swift */,
+			);
+			name = "Camera Controller";
 			sourceTree = "<group>";
 		};
 		9114C0E836E4DDB5B18C224B /* Pods */ = {
@@ -176,6 +239,27 @@
 			productReference = 8B23CAB51F00F9080024679D /* CameraMLTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8BD526FD1F02456300BE97C6 /* CameraML-dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BD5270D1F02456300BE97C6 /* Build configuration list for PBXNativeTarget "CameraML-dev" */;
+			buildPhases = (
+				8BD526FE1F02456300BE97C6 /* [CP] Check Pods Manifest.lock */,
+				8BD526FF1F02456300BE97C6 /* Sources */,
+				8BD527051F02456300BE97C6 /* Frameworks */,
+				8BD527071F02456300BE97C6 /* Resources */,
+				8BD5270A1F02456300BE97C6 /* [CP] Embed Pods Frameworks */,
+				8BD5270B1F02456300BE97C6 /* [CP] Copy Pods Resources */,
+				8BD5270C1F02456300BE97C6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CameraML-dev";
+			productName = CameraML;
+			productReference = 8BD527101F02456300BE97C6 /* CameraML-dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -196,6 +280,9 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8B23CAA01F00F9080024679D;
 					};
+					8BD526FD1F02456300BE97C6 = {
+						DevelopmentTeam = 84KS4SQJBZ;
+					};
 				};
 			};
 			buildConfigurationList = 8B23CA9C1F00F9080024679D /* Build configuration list for PBXProject "CameraML" */;
@@ -213,6 +300,7 @@
 			targets = (
 				8B23CAA01F00F9080024679D /* CameraML */,
 				8B23CAB41F00F9080024679D /* CameraMLTests */,
+				8BD526FD1F02456300BE97C6 /* CameraML-dev */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +319,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BD527071F02456300BE97C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD527081F02456300BE97C6 /* LaunchScreen.storyboard in Resources */,
+				8BD527091F02456300BE97C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +407,64 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		8BD526FE1F02456300BE97C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8BD5270A1F02456300BE97C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CameraML/Pods-CameraML-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BD5270B1F02456300BE97C6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CameraML/Pods-CameraML-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BD5270C1F02456300BE97C6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		9549F536BA2A2AB10FE862D7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,8 +503,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B23CAC71F00FF1E0024679D /* Router.swift in Sources */,
+				8BD527191F0247A800BE97C6 /* Color-Extension.swift in Sources */,
+				8BD526FC1F02452900BE97C6 /* LookPhotoViewController.swift in Sources */,
 				8B23CAC51F00F9580024679D /* CameraController.swift in Sources */,
-				8B23CAA71F00F9080024679D /* ViewController.swift in Sources */,
+				8B23CAA71F00F9080024679D /* MainViewController.swift in Sources */,
+				8BD5271B1F0247A800BE97C6 /* Font-extension.swift in Sources */,
 				8B23CAA51F00F9080024679D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +517,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B23CABA1F00F9080024679D /* CameraMLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BD526FF1F02456300BE97C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BD527001F02456300BE97C6 /* Router.swift in Sources */,
+				8BD5271A1F0247A800BE97C6 /* Color-Extension.swift in Sources */,
+				8BD527011F02456300BE97C6 /* LookPhotoViewController.swift in Sources */,
+				8BD527021F02456300BE97C6 /* CameraController.swift in Sources */,
+				8BD527031F02456300BE97C6 /* MainViewController.swift in Sources */,
+				8BD5271C1F0247A800BE97C6 /* Font-extension.swift in Sources */,
+				8BD527041F02456300BE97C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +707,34 @@
 			};
 			name = Release;
 		};
+		8BD5270E1F02456300BE97C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F5B3B8C90A0653D0DEF9965 /* Pods-CameraML.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84KS4SQJBZ;
+				INFOPLIST_FILE = "$(SRCROOT)/CameraML-dev.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraML;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8BD5270F1F02456300BE97C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C894AEF5679CC9CC8EBEDD50 /* Pods-CameraML.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84KS4SQJBZ;
+				INFOPLIST_FILE = "$(SRCROOT)/CameraML-dev.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraML;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -561,6 +761,15 @@
 			buildConfigurations = (
 				8B23CAC21F00F9080024679D /* Debug */,
 				8B23CAC31F00F9080024679D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BD5270D1F02456300BE97C6 /* Build configuration list for PBXNativeTarget "CameraML-dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BD5270E1F02456300BE97C6 /* Debug */,
+				8BD5270F1F02456300BE97C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

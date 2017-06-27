@@ -17,8 +17,13 @@ final class Router {
     
     // контроллер на главный экран
     func showMainController() {
-        rootViewController.setViewControllers([ViewController()], animated: true)
+        rootViewController.setViewControllers([MainViewController(router: self)], animated: true)
         rootViewController.isNavigationBarHidden = true
         rootViewController.navigationBar.isTranslucent = false
+    }
+    
+    func showLookPhotoLibrary(controller: UIImagePickerController, image: UIImage, delegate: LookPhotoLibraryDelegate) {
+        let lookPhotoLibraryControler = LookPhotoViewController(image: image, delegate: delegate)
+        controller.present(lookPhotoLibraryControler, animated: true, completion: nil)
     }
 }
