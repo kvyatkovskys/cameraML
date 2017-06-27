@@ -192,8 +192,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func choosePhoto(image: UIImage) {
-        capturePhoto.image = image
-        blurView.isHidden = false
+        setAnalazyPhoto(image: image)
         imagePicker.popToRootViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
@@ -255,11 +254,16 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
                     PHAssetChangeRequest.creationRequestForAsset(from: image)
                 }
                 self.getLastPhotoFromLibrary()
-                self.blurView.isHidden = false
+                self.setAnalazyPhoto(image: image)
             } catch {
                 print(error)
             }
         }
+    }
+    
+    fileprivate func setAnalazyPhoto(image: UIImage) {
+        capturePhoto.image = image
+        self.blurView.isHidden = false
     }
     
     fileprivate func getLastPhotoFromLibrary() {
