@@ -10,8 +10,8 @@ import UIKit
 import Photos
 import SnapKit
 import RxSwift
-import RxCocoa
-import Lightbox
+//import RxCocoa
+//import Lightbox
 
 final class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LookPhotoLibraryDelegate {
     fileprivate let router: Router
@@ -47,12 +47,12 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     fileprivate lazy var blurView: UIView = {
         let view = UIView()
         view.isHidden = true
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(blurEffectView)
-        blurEffectView.addSubview(self.capturePhoto)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = view.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        view.addSubview(blurEffectView)
+//        blurEffectView.addSubview(self.capturePhoto)
         return view
     }()
     
@@ -173,30 +173,30 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         
         configureCameraController()
         
-        captureButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self] _ in
-                self.captureImage()
-            }).addDisposableTo(disposeBag)
-        
-        toggleCameraButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self] _ in
-                self.switchCameras()
-            }).addDisposableTo(disposeBag)
-
-        toggleFlashButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self] _ in
-                self.toggleFlash()
-            }).addDisposableTo(disposeBag)
-        
-        openLibraryButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self] _ in
-                self.present(self.imagePicker, animated: true, completion: nil)
-            }).addDisposableTo(disposeBag)
-        
-        cancelButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self] _ in
-                self.blurView.isHidden = true
-            }).addDisposableTo(disposeBag)
+//        captureButton.rx.tap.asDriver()
+//            .drive(onNext: { [unowned self] _ in
+//                self.captureImage()
+//            }).addDisposableTo(disposeBag)
+//
+//        toggleCameraButton.rx.tap.asDriver()
+//            .drive(onNext: { [unowned self] _ in
+//                self.switchCameras()
+//            }).addDisposableTo(disposeBag)
+//
+//        toggleFlashButton.rx.tap.asDriver()
+//            .drive(onNext: { [unowned self] _ in
+//                self.toggleFlash()
+//            }).addDisposableTo(disposeBag)
+//
+//        openLibraryButton.rx.tap.asDriver()
+//            .drive(onNext: { [unowned self] _ in
+//                self.present(self.imagePicker, animated: true, completion: nil)
+//            }).addDisposableTo(disposeBag)
+//
+//        cancelButton.rx.tap.asDriver()
+//            .drive(onNext: { [unowned self] _ in
+//                self.blurView.isHidden = true
+//            }).addDisposableTo(disposeBag)
     }
     
     // MARK: - Delegates Picker

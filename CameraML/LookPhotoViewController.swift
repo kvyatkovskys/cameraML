@@ -94,15 +94,15 @@ final class LookPhotoViewController: UIViewController {
         
         updateConstaints()
         
-        cancelButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self] _ in
-                self.dismiss(animated: true, completion: nil)
-            }).addDisposableTo(disposeBag)
-        
-        chooseButton.rx.tap.asDriver()
-            .drive(onNext: { [unowned self, weak delegate = self.delegate] in
-                delegate?.choosePhoto(image: self.image)
-                self.dismiss(animated: true, completion: nil)
-            }).addDisposableTo(disposeBag)
+//        cancelButton.rx.tap.asDriver()
+//            .drive(onNext: { [unowned self] _ in
+//                self.dismiss(animated: true, completion: nil)
+//            }).addDisposableTo(disposeBag)
+//        
+//        chooseButton.rx.tap.asDriver()
+//            .drive(onNext: { [unowned self, weak delegate = self.delegate] in
+//                delegate?.choosePhoto(image: self.image)
+//                self.dismiss(animated: true, completion: nil)
+//            }).addDisposableTo(disposeBag)
     }
 }
