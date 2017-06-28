@@ -94,6 +94,8 @@ final class LookPhotoViewController: UIViewController {
         
         updateConstaints()
         
+        cancelButton.addTarget(self, action: #selector(dismissImage), for: .touchUpInside)
+        chooseButton.addTarget(self, action: #selector(chooseImage), for: .touchUpInside)
 //        cancelButton.rx.tap.asDriver()
 //            .drive(onNext: { [unowned self] _ in
 //                self.dismiss(animated: true, completion: nil)
@@ -104,5 +106,14 @@ final class LookPhotoViewController: UIViewController {
 //                delegate?.choosePhoto(image: self.image)
 //                self.dismiss(animated: true, completion: nil)
 //            }).addDisposableTo(disposeBag)
+    }
+    
+    func dismissImage() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func chooseImage() {
+        delegate?.choosePhoto(image: self.image)
+        dismiss(animated: true, completion: nil)
     }
 }

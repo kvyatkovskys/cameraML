@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		16A5D15CE0758C73F6483F05 /* Pods_CameraML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102B75CD30CDAFEE7BEC512C /* Pods_CameraML.framework */; };
 		652E92185C4F2E47BD8B82DA /* Pods_CameraMLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */; };
+		8B1527631F03EF070036B4E2 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B1527621F03EF070036B4E2 /* Inceptionv3.mlmodel */; };
+		8B1527641F03EF070036B4E2 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8B1527621F03EF070036B4E2 /* Inceptionv3.mlmodel */; };
 		8B23CAA51F00F9080024679D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA41F00F9080024679D /* AppDelegate.swift */; };
 		8B23CAA71F00F9080024679D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA61F00F9080024679D /* MainViewController.swift */; };
 		8B23CAAC1F00F9080024679D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAB1F00F9080024679D /* Assets.xcassets */; };
@@ -29,8 +31,6 @@
 		8BD5271A1F0247A800BE97C6 /* Color-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527171F0247A800BE97C6 /* Color-Extension.swift */; };
 		8BD5271B1F0247A800BE97C6 /* Font-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527181F0247A800BE97C6 /* Font-extension.swift */; };
 		8BD5271C1F0247A800BE97C6 /* Font-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527181F0247A800BE97C6 /* Font-extension.swift */; };
-		8BD527211F02570E00BE97C6 /* Inceptionv3.mlmodel in Resources */ = {isa = PBXBuildFile; fileRef = 8BD527201F02570E00BE97C6 /* Inceptionv3.mlmodel */; };
-		8BD527221F02570E00BE97C6 /* Inceptionv3.mlmodel in Resources */ = {isa = PBXBuildFile; fileRef = 8BD527201F02570E00BE97C6 /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +48,8 @@
 		3F5B3B8C90A0653D0DEF9965 /* Pods-CameraML.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraML.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CameraML/Pods-CameraML.debug.xcconfig"; sourceTree = "<group>"; };
 		45D2796211E27E6E0DD3E325 /* Pods-CameraMLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraMLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CameraMLTests/Pods-CameraMLTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CameraMLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B1527601F03EE2E0036B4E2 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		8B1527621F03EF070036B4E2 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../Downloads/Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		8B23CAA11F00F9080024679D /* CameraML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B23CAA41F00F9080024679D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B23CAA61F00F9080024679D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +66,6 @@
 		8BD527111F02456300BE97C6 /* CameraML-dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CameraML-dev.plist"; path = "/Users/km/Desktop/CameraML/CameraML-dev.plist"; sourceTree = "<absolute>"; };
 		8BD527171F0247A800BE97C6 /* Color-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color-Extension.swift"; sourceTree = "<group>"; };
 		8BD527181F0247A800BE97C6 /* Font-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font-extension.swift"; sourceTree = "<group>"; };
-		8BD527201F02570E00BE97C6 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		C894AEF5679CC9CC8EBEDD50 /* Pods-CameraML.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraML.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraML/Pods-CameraML.release.xcconfig"; sourceTree = "<group>"; };
 		FED60BC2A129CC2FE6300990 /* Pods-CameraMLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraMLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraMLTests/Pods-CameraMLTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +101,6 @@
 		8B23CA981F00F9080024679D = {
 			isa = PBXGroup;
 			children = (
-				8BD527201F02570E00BE97C6 /* Inceptionv3.mlmodel */,
 				8B23CAA31F00F9080024679D /* CameraML */,
 				8B23CAB81F00F9080024679D /* CameraMLTests */,
 				8B23CAA21F00F9080024679D /* Products */,
@@ -122,6 +122,7 @@
 		8B23CAA31F00F9080024679D /* CameraML */ = {
 			isa = PBXGroup;
 			children = (
+				8B1527621F03EF070036B4E2 /* Inceptionv3.mlmodel */,
 				8B23CAA41F00F9080024679D /* AppDelegate.swift */,
 				8B23CAC61F00FF1E0024679D /* Router.swift */,
 				8B23CAA61F00F9080024679D /* MainViewController.swift */,
@@ -192,6 +193,7 @@
 		C83F405E102B26CA75CC62A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B1527601F03EE2E0036B4E2 /* CoreML.framework */,
 				102B75CD30CDAFEE7BEC512C /* Pods_CameraML.framework */,
 				5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */,
 			);
@@ -315,7 +317,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B23CAAF1F00F9080024679D /* LaunchScreen.storyboard in Resources */,
-				8BD527211F02570E00BE97C6 /* Inceptionv3.mlmodel in Resources */,
 				8B23CAAC1F00F9080024679D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +333,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BD527081F02456300BE97C6 /* LaunchScreen.storyboard in Resources */,
-				8BD527221F02570E00BE97C6 /* Inceptionv3.mlmodel in Resources */,
 				8BD527091F02456300BE97C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +513,7 @@
 				8BD526FC1F02452900BE97C6 /* LookPhotoViewController.swift in Sources */,
 				8B23CAC51F00F9580024679D /* CameraController.swift in Sources */,
 				8B23CAA71F00F9080024679D /* MainViewController.swift in Sources */,
+				8B1527631F03EF070036B4E2 /* Inceptionv3.mlmodel in Sources */,
 				8BD5271B1F0247A800BE97C6 /* Font-extension.swift in Sources */,
 				8B23CAA51F00F9080024679D /* AppDelegate.swift in Sources */,
 			);
@@ -535,6 +536,7 @@
 				8BD527011F02456300BE97C6 /* LookPhotoViewController.swift in Sources */,
 				8BD527021F02456300BE97C6 /* CameraController.swift in Sources */,
 				8BD527031F02456300BE97C6 /* MainViewController.swift in Sources */,
+				8B1527641F03EF070036B4E2 /* Inceptionv3.mlmodel in Sources */,
 				8BD5271C1F0247A800BE97C6 /* Font-extension.swift in Sources */,
 				8BD527041F02456300BE97C6 /* AppDelegate.swift in Sources */,
 			);

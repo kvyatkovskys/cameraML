@@ -9,14 +9,16 @@
 import UIKit
 import Photos
 import SnapKit
-import RxSwift
+import CoreML
+//import RxSwift
 //import RxCocoa
 //import Lightbox
 
 final class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LookPhotoLibraryDelegate {
     fileprivate let router: Router
-    fileprivate let disposeBag = DisposeBag()
+    //fileprivate let disposeBag = DisposeBag()
     fileprivate let cameraController = CameraController()
+    fileprivate let inceptionModel = Inceptionv3()
     
     // пикер для галереи
     fileprivate let imagePicker: UIImagePickerController = {
@@ -35,6 +37,15 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         return image
     }()
     
+    fileprivate let answerFromMLLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.fontBold19
+        label.numberOfLines = 0
+        label.textColor = UIColor.white
+        return label
+    }()
+    
     fileprivate let cancelButton: UIButton = {
         let button = UIButton()
         button.setTitle("Cancel", for: .normal)
@@ -47,12 +58,11 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     fileprivate lazy var blurView: UIView = {
         let view = UIView()
         view.isHidden = true
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = view.bounds
-//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        view.addSubview(blurEffectView)
-//        blurEffectView.addSubview(self.capturePhoto)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.insertSubview(blurEffectView, aboveSubview: self.capturePhoto)
         return view
     }()
     
@@ -113,8 +123,13 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
             make.center.equalToSuperview()
         }
         
+        answerFromMLLabel.snp.makeConstraints { (make) in
+            make.left.right.equalTo(capturePhoto)
+            make.bottom.equalTo(capturePhoto.snp.top).offset(-20.0)
+        }
+        
         cancelButton.snp.makeConstraints { (make) in
-            make.top.equalTo(capturePhoto.snp.bottom).offset(20.0)
+            make.top.equalTo(capturePhoto.snp.bottom).offset(30.0)
             make.left.right.equalTo(capturePhoto)
         }
         
@@ -163,6 +178,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         self.view.addSubview(capturePreviewView)
         self.view.addSubview(blurView)
         blurView.addSubview(capturePhoto)
+        blurView.addSubview(answerFromMLLabel)
         blurView.addSubview(cancelButton)
         capturePreviewView.addSubview(captureButton)
         capturePreviewView.addSubview(openLibraryButton)
@@ -172,6 +188,12 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         updateConstraints()
         
         configureCameraController()
+        
+        captureButton.addTarget(self, action: #selector(captureImage), for: .touchUpInside)
+        toggleCameraButton.addTarget(self, action: #selector(switchCameras), for: .touchUpInside)
+        toggleFlashButton.addTarget(self, action: #selector(toggleFlash), for: .touchUpInside)
+        openLibraryButton.addTarget(self, action: #selector(openLibrary), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(hideBlueView), for: .touchUpInside)
         
 //        captureButton.rx.tap.asDriver()
 //            .drive(onNext: { [unowned self] _ in
@@ -199,6 +221,14 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
 //            }).addDisposableTo(disposeBag)
     }
     
+    func openLibrary() {
+        present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+    func hideBlueView() {
+        blurView.isHidden = true
+    }
+    
     // MARK: - Delegates Picker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -214,6 +244,10 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         setAnalazyPhoto(image: image)
         imagePicker.popToRootViewController(animated: true)
         dismiss(animated: true, completion: nil)
+        
+        DispatchQueue.main.async { [unowned self] _ in
+            self.classifierImage(image: image)
+        }
     }
     
     // MARK: - Camera Controller
@@ -309,5 +343,53 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
                                     self.openLibraryButton.setImage(image, for: .normal)
             })
         }
+    }
+    
+    fileprivate func classifierImage(image: UIImage) {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 299.0, height: 299.0), true, 2.0)
+        image.draw(in: CGRect(x: 0.0, y: 0.0, width: 299.0, height: 299.0))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
+                     kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
+        var pixelBuffer: CVPixelBuffer?
+        let status = CVPixelBufferCreate(kCFAllocatorDefault,
+                                         Int(newImage.size.width),
+                                         Int(newImage.size.height),
+                                         kCVPixelFormatType_32ARGB,
+                                         attrs,
+                                         &pixelBuffer)
+        guard (status == kCVReturnSuccess) else {
+            return
+        }
+        
+        CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+        let pixelData = CVPixelBufferGetBaseAddress(pixelBuffer!)
+        
+        let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
+        let context = CGContext(data: pixelData,
+                                width: Int(newImage.size.width),
+                                height: Int(newImage.size.height),
+                                bitsPerComponent: 8,
+                                bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!),
+                                space: rgbColorSpace,
+                                bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
+        
+        context?.translateBy(x: 0.0, y: newImage.size.height)
+        context?.scaleBy(x: 1.0, y: -1.0)
+        
+        UIGraphicsPushContext(context!)
+        newImage.draw(in: CGRect(x: 0.0, y: 0.0, width: newImage.size.width, height: newImage.size.height))
+        UIGraphicsPopContext()
+        CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+        
+        // Core ML
+        
+        guard let prediction = try? inceptionModel.prediction(image: pixelBuffer!) else {
+            return
+        }
+        
+        answerFromMLLabel.text = prediction.classLabel
     }
 }
