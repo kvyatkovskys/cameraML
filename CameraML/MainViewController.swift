@@ -311,6 +311,11 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
                 }
                 self.getLastPhotoFromLibrary()
                 self.setAnalazyPhoto(image: image)
+                
+                DispatchQueue.main.async { [unowned self] _ in
+                    self.classifierImage(image: image)
+                }
+                
             } catch {
                 print(error)
             }
@@ -360,7 +365,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
                                          kCVPixelFormatType_32ARGB,
                                          attrs,
                                          &pixelBuffer)
-        guard (status == kCVReturnSuccess) else {
+        guard status == kCVReturnSuccess else {
             return
         }
         
