@@ -17,6 +17,7 @@
 		8B23CAC71F00FF1E0024679D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAC61F00FF1E0024679D /* Router.swift */; };
 		8B97899D1FA8B433003A63CC /* Pods_CameraML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B97899E1FA8B433003A63CC /* Pods_CameraML.framework */; };
 		8BB9C93C1FA9BEBA00553880 /* LookPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9C93B1FA9BEBA00553880 /* LookPhotoViewController.swift */; };
+		8BB9C93F1FA9D24500553880 /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9C93E1FA9D24500553880 /* VGG16.mlmodel */; };
 		8BD527191F0247A800BE97C6 /* Color-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527171F0247A800BE97C6 /* Color-Extension.swift */; };
 		8BD5271B1F0247A800BE97C6 /* Font-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527181F0247A800BE97C6 /* Font-extension.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		8B9789A01FA8B439003A63CC /* Pods_CameraML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_CameraML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9789A21FA8EA40003A63CC /* Pods_CameraML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_CameraML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB9C93B1FA9BEBA00553880 /* LookPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookPhotoViewController.swift; sourceTree = "<group>"; };
+		8BB9C93E1FA9D24500553880 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
 		8BD527111F02456300BE97C6 /* CameraML-dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CameraML-dev.plist"; path = "/Users/km/Desktop/CameraML/CameraML-dev.plist"; sourceTree = "<absolute>"; };
 		8BD527171F0247A800BE97C6 /* Color-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color-Extension.swift"; sourceTree = "<group>"; };
 		8BD527181F0247A800BE97C6 /* Font-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font-extension.swift"; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		8B23CA981F00F9080024679D = {
 			isa = PBXGroup;
 			children = (
+				8BB9C93E1FA9D24500553880 /* VGG16.mlmodel */,
 				8B23CAA31F00F9080024679D /* CameraML */,
 				8B23CAB81F00F9080024679D /* CameraMLTests */,
 				8B23CAA21F00F9080024679D /* Products */,
@@ -425,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB9C93F1FA9D24500553880 /* VGG16.mlmodel in Sources */,
 				8B23CAC71F00FF1E0024679D /* Router.swift in Sources */,
 				8BD527191F0247A800BE97C6 /* Color-Extension.swift in Sources */,
 				8B23CAC51F00F9580024679D /* CameraController.swift in Sources */,
