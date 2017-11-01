@@ -1,3 +1,4 @@
 language: swift
 xcode_workspace: CameraML.xcworkspace
 xcode_scheme: CameraMLTests
+os: ios
