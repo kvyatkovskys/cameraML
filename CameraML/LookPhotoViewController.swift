@@ -103,12 +103,8 @@ final class LookPhotoViewController: UIViewController {
         
         chooseButton.rx.tap.asDriver()
             .drive(onNext: { [unowned self, weak delegate = self.delegate] in
+                self.dismiss(animated: true, completion: nil)
                 delegate?.choosePhoto(image: self.image)
             }).disposed(by: disposeBag)
-    }
-    
-    func chooseImage() {
-        delegate?.choosePhoto(image: image)
-        dismiss(animated: true, completion: nil)
     }
 }

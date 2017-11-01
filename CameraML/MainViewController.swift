@@ -18,7 +18,10 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     fileprivate let disposeBag = DisposeBag()
     fileprivate let cameraController = CameraController()
     // need download from site
-    fileprivate let inceptionModel = VGG16()
+    fileprivate let vggModel = VGG16()
+    fileprivate lazy var photosLibrary: PhotoLibrary = {
+       return PhotoLibrary()
+    }()
     
     // пикер для галереи
     fileprivate let imagePicker: UIImagePickerController = {
@@ -84,8 +87,10 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     }()
     
     // для открытия галереи
-    fileprivate let openLibraryButton: UIButton = {
+    fileprivate lazy var openLibraryButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0))
+        button.layer.cornerRadius = 5.0
+        button.clipsToBounds = true
         return button
     }()
     
@@ -119,11 +124,13 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         }
         
         capturePhoto.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: view.frame.size.width - 40.0, height: view.frame.size.height / 2))
+            make.size.equalTo(CGSize(width: view.frame.size.width - 40.0,
+                                     height: view.frame.size.height / 2))
             make.center.equalToSuperview()
         }
         
         answerFromMLLabel.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(30.0)
             make.left.right.equalTo(capturePhoto)
             make.bottom.equalTo(capturePhoto.snp.top).offset(-20.0)
         }
@@ -175,8 +182,8 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         getLastPhotoFromLibrary()
         imagePicker.delegate = self
         
-        self.view.addSubview(capturePreviewView)
-        self.view.addSubview(blurView)
+        view.addSubview(capturePreviewView)
+        view.addSubview(blurView)
         blurView.addSubview(capturePhoto)
         blurView.addSubview(answerFromMLLabel)
         blurView.addSubview(cancelButton)
@@ -215,14 +222,6 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
             }).disposed(by: disposeBag)
     }
     
-    func openLibrary() {
-        present(self.imagePicker, animated: true, completion: nil)
-    }
-    
-    func hideBlueView() {
-        blurView.isHidden = true
-    }
-    
     // MARK: - Delegates Picker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -235,23 +234,19 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func choosePhoto(image: UIImage) {
-        setAnalazyPhoto(image: image)
         imagePicker.popToRootViewController(animated: true)
         dismiss(animated: true, completion: nil)
-        
-        DispatchQueue.main.async { [unowned self] in
-            self.classifierImage(image: image)
-        }
+        setAnalazyPhoto(image)
+        scanImage(image)
     }
     
     // MARK: - Camera Controller
     func configureCameraController() {
         cameraController.flashMode = .off
-        cameraController.prepare { (error) in
+        cameraController.prepare { [unowned self] (error) in
             if let error = error {
                 print(error)
             }
-            
             try? self.cameraController.displayPreview(on: self.capturePreviewView)
         }
     }
@@ -292,7 +287,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     // делаем снимок
-    @objc func captureImage() {
+    fileprivate func captureImage() {
         cameraController.captureImage { [unowned self] (image, error) in
             guard let image = image else {
                 print(error ?? "Image capture error")
@@ -304,12 +299,8 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
                     PHAssetChangeRequest.creationRequestForAsset(from: image)
                 }
                 self.getLastPhotoFromLibrary()
-                self.setAnalazyPhoto(image: image)
-                
-                DispatchQueue.main.async { [unowned self] in
-                    self.classifierImage(image: image)
-                }
-                
+                self.setAnalazyPhoto(image)
+                self.scanImage(image)
             } catch {
                 print(error)
             }
@@ -317,36 +308,38 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     // фото, которое будем сканировать
-    fileprivate func setAnalazyPhoto(image: UIImage) {
+    fileprivate func setAnalazyPhoto(_ image: UIImage) {
         capturePhoto.image = image
-        self.blurView.isHidden = false
+        blurView.isHidden = false
     }
     
     // берём самое последнее фото из галереи
     fileprivate func getLastPhotoFromLibrary() {
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-        let fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-
-        let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = true
-        
-        if let lastAsset: PHAsset = fetchResult.lastObject {
-            let manager = PHImageManager.default()
-            
-            manager.requestImage(for: lastAsset,
-                                 targetSize: openLibraryButton.bounds.size,
-                                 contentMode: .aspectFill,
-                                 options: requestOptions,
-                                 resultHandler: { [unowned self] (image, _) in
-                                    self.openLibraryButton.setImage(image, for: .normal)
-            })
+        photosLibrary.getLastPhoto(size: openLibraryButton.bounds.size) { [unowned self] (image) in
+            if let img = image {
+                DispatchQueue.main.async {
+                    self.openLibraryButton.setImage(img, for: .normal)
+                }
+            }
         }
     }
     
-    fileprivate func classifierImage(image: UIImage) {
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: 299.0, height: 299.0), true, 2.0)
-        image.draw(in: CGRect(x: 0.0, y: 0.0, width: 299.0, height: 299.0))
+    fileprivate func scanImage(_ image: UIImage) {
+        DispatchQueue.global(qos: .default).async { [unowned self] in
+            // Core ML
+            guard let pixelBuffer = self.convertImageToPixelBuffer(image),
+                let prediction = try? self.vggModel.prediction(image: pixelBuffer) else {
+                    return
+            }
+            DispatchQueue.main.async {
+                self.answerFromMLLabel.text = prediction.classLabel
+            }
+        }
+    }
+    
+    fileprivate func convertImageToPixelBuffer(_ image: UIImage) -> CVPixelBuffer? {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 224.0, height: 224.0), true, 2.0)
+        image.draw(in: CGRect(x: 0.0, y: 0.0, width: 224.0, height: 224.0))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
@@ -359,8 +352,9 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
                                          kCVPixelFormatType_32ARGB,
                                          attrs,
                                          &pixelBuffer)
+        
         guard status == kCVReturnSuccess else {
-            return
+            return nil
         }
         
         CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
@@ -382,13 +376,6 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         newImage.draw(in: CGRect(x: 0.0, y: 0.0, width: newImage.size.width, height: newImage.size.height))
         UIGraphicsPopContext()
         CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
-        
-        // Core ML
-        
-        guard let prediction = try? inceptionModel.prediction(image: pixelBuffer!) else {
-            return
-        }
-        
-        answerFromMLLabel.text = prediction.classLabel
+        return pixelBuffer
     }
 }

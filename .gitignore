@@ -4,6 +4,7 @@ Pods/Pods.xcodeproj/xcuserdata
 *.xcshareddata
 *.xcuserdata
 *.xcworkspace
+*.xcuserstate
 .scannerwork
 *.mobileprovision
 *.zip

@@ -29,6 +29,8 @@
 		8BB9C9511FA9D81A00553880 /* Pods_CameraML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B97899E1FA8B433003A63CC /* Pods_CameraML.framework */; };
 		8BB9C9531FA9D81A00553880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAD1F00F9080024679D /* LaunchScreen.storyboard */; };
 		8BB9C9541FA9D81A00553880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAB1F00F9080024679D /* Assets.xcassets */; };
+		8BB9C95E1FA9FBBC00553880 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9C95D1FA9FBBC00553880 /* PhotoLibrary.swift */; };
+		8BB9C95F1FA9FBBC00553880 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9C95D1FA9FBBC00553880 /* PhotoLibrary.swift */; };
 		8BD527191F0247A800BE97C6 /* Color-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527171F0247A800BE97C6 /* Color-Extension.swift */; };
 		8BD5271B1F0247A800BE97C6 /* Font-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD527181F0247A800BE97C6 /* Font-extension.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,7 @@
 		8BB9C93E1FA9D24500553880 /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = VGG16.mlmodel; sourceTree = "<group>"; };
 		8BB9C95B1FA9D81A00553880 /* CameraML-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CameraML-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB9C95C1FA9D81A00553880 /* dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "dev-Info.plist"; path = "/Users/km/cameraML/dev-Info.plist"; sourceTree = "<absolute>"; };
+		8BB9C95D1FA9FBBC00553880 /* PhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
 		8BD527171F0247A800BE97C6 /* Color-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color-Extension.swift"; sourceTree = "<group>"; };
 		8BD527181F0247A800BE97C6 /* Font-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font-extension.swift"; sourceTree = "<group>"; };
 		F13BA9D351DC50C74171C156 /* Pods-CameraML.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraML.release.xcconfig"; path = "Pods/Target Support Files/Pods-CameraML/Pods-CameraML.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 				8B23CAA41F00F9080024679D /* AppDelegate.swift */,
 				8B23CAC61F00FF1E0024679D /* Router.swift */,
 				8B23CAA61F00F9080024679D /* MainViewController.swift */,
+				8BB9C95D1FA9FBBC00553880 /* PhotoLibrary.swift */,
 				8BD5271F1F0247EB00BE97C6 /* Camera Controller */,
 				8BD5271E1F0247D900BE97C6 /* Look Photo From Library */,
 				8B23CAAB1F00F9080024679D /* Assets.xcassets */,
@@ -555,6 +559,7 @@
 				8B23CAC71F00FF1E0024679D /* Router.swift in Sources */,
 				8BD527191F0247A800BE97C6 /* Color-Extension.swift in Sources */,
 				8B23CAC51F00F9580024679D /* CameraController.swift in Sources */,
+				8BB9C95E1FA9FBBC00553880 /* PhotoLibrary.swift in Sources */,
 				8BB9C93C1FA9BEBA00553880 /* LookPhotoViewController.swift in Sources */,
 				8B23CAA71F00F9080024679D /* MainViewController.swift in Sources */,
 				8BD5271B1F0247A800BE97C6 /* Font-extension.swift in Sources */,
@@ -578,6 +583,7 @@
 				8BB9C9491FA9D81A00553880 /* Router.swift in Sources */,
 				8BB9C94A1FA9D81A00553880 /* Color-Extension.swift in Sources */,
 				8BB9C94B1FA9D81A00553880 /* CameraController.swift in Sources */,
+				8BB9C95F1FA9FBBC00553880 /* PhotoLibrary.swift in Sources */,
 				8BB9C94C1FA9D81A00553880 /* LookPhotoViewController.swift in Sources */,
 				8BB9C94D1FA9D81A00553880 /* MainViewController.swift in Sources */,
 				8BB9C94E1FA9D81A00553880 /* Font-extension.swift in Sources */,
@@ -787,6 +793,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/dev-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraML;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -803,6 +810,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/dev-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kviatkovskii.CameraML;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
