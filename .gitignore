@@ -1,0 +1,13 @@
+VGG16.mlmodel
+Pods/Pods.xcodeproj/xcuserdata
+*.xcschemes
+*.xcshareddata
+*.xcuserdata
+*.xcworkspace
+.scannerwork
+*.mobileprovision
+*.zip
+*.ipa
+*.cer
+*.html
+*.junit

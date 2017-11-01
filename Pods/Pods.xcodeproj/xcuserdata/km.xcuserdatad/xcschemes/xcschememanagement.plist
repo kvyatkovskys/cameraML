@@ -4,117 +4,43 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Gallery.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>Hue.xcscheme</key>
+		<key>Pods-CameraML.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Lightbox.xcscheme</key>
+		<key>Pods-CameraMLTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>Pods-CameraML.xcscheme</key>
+		<key>RxCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>Pods-CameraMLTests.xcscheme</key>
+		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>RxCocoa.xcscheme</key>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>RxGesture.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
-		<key>RxSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
-		</dict>
-		<key>SnapKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>07835DAC6B96048D54B3967E3C04D953</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1DE21EB054AD768A7865AAFD67524F55</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>37B66AF5870FA3E1022722ECFA09EB7C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A40D2376F0108BFF6B7D6C0F5A58271B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A5F21100D20E12618DD1EFFC1BD6D21E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A96304673600DABF715B572A360241ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B2542602E50EDF091ADB18B4688DF34F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BB4E12B19311EF52068B16873A21E70D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C1BEBC737A0E2DD8B0E110D2DF909336</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

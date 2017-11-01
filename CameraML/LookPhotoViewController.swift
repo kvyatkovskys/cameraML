@@ -8,6 +8,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import SnapKit
 
 protocol LookPhotoLibraryDelegate: class {
     func choosePhoto(image: UIImage)
@@ -17,7 +19,7 @@ final class LookPhotoViewController: UIViewController {
     fileprivate let image: UIImage
     fileprivate weak var delegate: LookPhotoLibraryDelegate?
     fileprivate let disposeBag = DisposeBag()
-
+    
     fileprivate lazy var imageView: UIImageView = {
         let image = UIImageView(image: self.image)
         image.contentMode = .scaleAspectFill
@@ -87,33 +89,26 @@ final class LookPhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(imageView)
-        self.view.addSubview(bottomView)
+        view.addSubview(imageView)
+        view.addSubview(bottomView)
         bottomView.addSubview(cancelButton)
         bottomView.addSubview(chooseButton)
         
         updateConstaints()
         
-        cancelButton.addTarget(self, action: #selector(dismissImage), for: .touchUpInside)
-        chooseButton.addTarget(self, action: #selector(chooseImage), for: .touchUpInside)
-//        cancelButton.rx.tap.asDriver()
-//            .drive(onNext: { [unowned self] _ in
-//                self.dismiss(animated: true, completion: nil)
-//            }).addDisposableTo(disposeBag)
-//        
-//        chooseButton.rx.tap.asDriver()
-//            .drive(onNext: { [unowned self, weak delegate = self.delegate] in
-//                delegate?.choosePhoto(image: self.image)
-//                self.dismiss(animated: true, completion: nil)
-//            }).addDisposableTo(disposeBag)
-    }
-    
-    func dismissImage() {
-        dismiss(animated: true, completion: nil)
+        cancelButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] in
+                self.dismiss(animated: true, completion: nil)
+            }).disposed(by: disposeBag)
+        
+        chooseButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self, weak delegate = self.delegate] in
+                delegate?.choosePhoto(image: self.image)
+            }).disposed(by: disposeBag)
     }
     
     func chooseImage() {
-        delegate?.choosePhoto(image: self.image)
+        delegate?.choosePhoto(image: image)
         dismiss(animated: true, completion: nil)
     }
 }
