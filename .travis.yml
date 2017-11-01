@@ -2,3 +2,4 @@ language: swift
 xcode_workspace: CameraML.xcworkspace
 xcode_scheme: CameraMLTests
 os: ios
+osx_image: xcode9.1

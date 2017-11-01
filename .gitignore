@@ -3,6 +3,7 @@ Pods/Pods.xcodeproj/xcuserdata
 *.xcschemes
 *.xcshareddata
 *.xcuserdata
+*.xcworkspace
 .scannerwork
 *.mobileprovision
 *.zip
