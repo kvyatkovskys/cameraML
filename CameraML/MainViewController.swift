@@ -8,17 +8,17 @@
 
 import UIKit
 import Photos
-import SnapKit
 import CoreML
-//import RxSwift
-//import RxCocoa
-//import Lightbox
+import RxSwift
+import RxCocoa
+import SnapKit
 
 final class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, LookPhotoLibraryDelegate {
     fileprivate let router: Router
-    //fileprivate let disposeBag = DisposeBag()
+    fileprivate let disposeBag = DisposeBag()
     fileprivate let cameraController = CameraController()
-    fileprivate let inceptionModel = Inceptionv3()
+    // need download from site
+    fileprivate let inceptionModel = VGG16()
     
     // пикер для галереи
     fileprivate let imagePicker: UIImagePickerController = {
@@ -189,36 +189,30 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         
         configureCameraController()
         
-        captureButton.addTarget(self, action: #selector(captureImage), for: .touchUpInside)
-        toggleCameraButton.addTarget(self, action: #selector(switchCameras), for: .touchUpInside)
-        toggleFlashButton.addTarget(self, action: #selector(toggleFlash), for: .touchUpInside)
-        openLibraryButton.addTarget(self, action: #selector(openLibrary), for: .touchUpInside)
-        cancelButton.addTarget(self, action: #selector(hideBlueView), for: .touchUpInside)
-        
-//        captureButton.rx.tap.asDriver()
-//            .drive(onNext: { [unowned self] _ in
-//                self.captureImage()
-//            }).addDisposableTo(disposeBag)
-//
-//        toggleCameraButton.rx.tap.asDriver()
-//            .drive(onNext: { [unowned self] _ in
-//                self.switchCameras()
-//            }).addDisposableTo(disposeBag)
-//
-//        toggleFlashButton.rx.tap.asDriver()
-//            .drive(onNext: { [unowned self] _ in
-//                self.toggleFlash()
-//            }).addDisposableTo(disposeBag)
-//
-//        openLibraryButton.rx.tap.asDriver()
-//            .drive(onNext: { [unowned self] _ in
-//                self.present(self.imagePicker, animated: true, completion: nil)
-//            }).addDisposableTo(disposeBag)
-//
-//        cancelButton.rx.tap.asDriver()
-//            .drive(onNext: { [unowned self] _ in
-//                self.blurView.isHidden = true
-//            }).addDisposableTo(disposeBag)
+        captureButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.captureImage()
+            }).disposed(by: disposeBag)
+
+        toggleCameraButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.switchCameras()
+            }).disposed(by: disposeBag)
+
+        toggleFlashButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.toggleFlash()
+            }).disposed(by: disposeBag)
+
+        openLibraryButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }).disposed(by: disposeBag)
+
+        cancelButton.rx.tap.asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.blurView.isHidden = true
+            }).disposed(by: disposeBag)
     }
     
     func openLibrary() {
@@ -230,7 +224,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     // MARK: - Delegates Picker
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             router.showLookPhotoLibrary(controller: picker, image: chosenImage, delegate: self)
         }
@@ -245,7 +239,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
         imagePicker.popToRootViewController(animated: true)
         dismiss(animated: true, completion: nil)
         
-        DispatchQueue.main.async { [unowned self] _ in
+        DispatchQueue.main.async { [unowned self] in
             self.classifierImage(image: image)
         }
     }
@@ -298,7 +292,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     // делаем снимок
-    func captureImage() {
+    @objc func captureImage() {
         cameraController.captureImage { [unowned self] (image, error) in
             guard let image = image else {
                 print(error ?? "Image capture error")
@@ -312,7 +306,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
                 self.getLastPhotoFromLibrary()
                 self.setAnalazyPhoto(image: image)
                 
-                DispatchQueue.main.async { [unowned self] _ in
+                DispatchQueue.main.async { [unowned self] in
                     self.classifierImage(image: image)
                 }
                 

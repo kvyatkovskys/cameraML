@@ -18,6 +18,6 @@ extension UIColor {
     }
     
     convenience init(withHex: Int, alpha: Float) {
-        self.init(red:(withHex >> 16) & 0xff, green:(withHex >> 8) & 0xff, blue:withHex & 0xff, alphaLvl: alpha)
+        self.init(red: (withHex >> 16) & 0xff, green: (withHex >> 8) & 0xff, blue: withHex & 0xff, alphaLvl: alpha)
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0910"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C1BEBC737A0E2DD8B0E110D2DF909336"
+               BlueprintIdentifier = "D729B8E2B6EEF3BC633B3982D0166815"
                BuildableName = "Pods_CameraMLTests.framework"
                BlueprintName = "Pods-CameraMLTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C1BEBC737A0E2DD8B0E110D2DF909336"
+            BlueprintIdentifier = "D729B8E2B6EEF3BC633B3982D0166815"
             BuildableName = "Pods_CameraMLTests.framework"
             BlueprintName = "Pods-CameraMLTests"
             ReferencedContainer = "container:Pods.xcodeproj">
