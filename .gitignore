@@ -1,8 +1,8 @@
 VGG16.mlmodel
 Pods/Pods.xcodeproj/xcuserdata
-CameraML.xcodeproj/xcuserdata/chiliec.xcuserdatad/xcschemes
-CameraML.xcworkspace/xcshareddata
-CameraML.xcworkspace/xcuserdata
+*.xcschemes
+*.xcshareddata
+*.xcuserdata
 .scannerwork
 *.mobileprovision
 *.zip

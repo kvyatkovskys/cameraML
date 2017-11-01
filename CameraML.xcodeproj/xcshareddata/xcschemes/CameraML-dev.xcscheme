@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BD526FD1F02456300BE97C6"
+               BlueprintIdentifier = "8BB9C9451FA9D81A00553880"
                BuildableName = "CameraML-dev.app"
                BlueprintName = "CameraML-dev"
                ReferencedContainer = "container:CameraML.xcodeproj">
@@ -33,7 +33,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BD526FD1F02456300BE97C6"
+            BlueprintIdentifier = "8BB9C9451FA9D81A00553880"
             BuildableName = "CameraML-dev.app"
             BlueprintName = "CameraML-dev"
             ReferencedContainer = "container:CameraML.xcodeproj">
@@ -57,7 +57,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BD526FD1F02456300BE97C6"
+            BlueprintIdentifier = "8BB9C9451FA9D81A00553880"
             BuildableName = "CameraML-dev.app"
             BlueprintName = "CameraML-dev"
             ReferencedContainer = "container:CameraML.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BD526FD1F02456300BE97C6"
+            BlueprintIdentifier = "8BB9C9451FA9D81A00553880"
             BuildableName = "CameraML-dev.app"
             BlueprintName = "CameraML-dev"
             ReferencedContainer = "container:CameraML.xcodeproj">
