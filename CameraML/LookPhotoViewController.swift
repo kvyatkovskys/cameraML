@@ -22,14 +22,14 @@ final class LookPhotoViewController: UIViewController {
     
     fileprivate lazy var imageView: UIImageView = {
         let image = UIImageView(image: self.image)
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
     fileprivate let bottomView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black
-        view.alpha = 0.8
+        view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
+        view.layer.cornerRadius = 10.0
         return view
     }()
     
@@ -56,9 +56,10 @@ final class LookPhotoViewController: UIViewController {
         }
         
         bottomView.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
+            make.left.equalToSuperview().offset(10.0)
+            make.right.equalToSuperview().offset(-10.0)
             make.height.equalTo(70.0)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-10.0)
         }
         
         cancelButton.snp.makeConstraints { (make) in
@@ -88,6 +89,7 @@ final class LookPhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         
         view.addSubview(imageView)
         view.addSubview(bottomView)

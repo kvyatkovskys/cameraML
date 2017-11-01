@@ -179,7 +179,6 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getLastPhotoFromLibrary()
         imagePicker.delegate = self
         
         view.addSubview(capturePreviewView)
@@ -220,6 +219,11 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
             .drive(onNext: { [unowned self] _ in
                 self.blurView.isHidden = true
             }).disposed(by: disposeBag)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getLastPhotoFromLibrary()
     }
     
     // MARK: - Delegates Picker
@@ -325,6 +329,7 @@ final class MainViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     fileprivate func scanImage(_ image: UIImage) {
+        answerFromMLLabel.text = ""
         DispatchQueue.global(qos: .default).async { [unowned self] in
             // Core ML
             guard let pixelBuffer = self.convertImageToPixelBuffer(image),
