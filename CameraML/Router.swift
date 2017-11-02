@@ -24,7 +24,8 @@ final class Router {
     
     // показываем просмоторщик, фото в библиотеке
     func showLookPhotoLibrary(controller: UIImagePickerController, image: UIImage, delegate: LookPhotoLibraryDelegate) {
-        let lookPhotoLibraryControler = LookPhotoViewController(image: image, delegate: delegate)
+        let dependeces = LookPhotoDependeces(image, delegate)
+        let lookPhotoLibraryControler = LookPhotoViewController(dependeces)
         controller.present(lookPhotoLibraryControler, animated: true, completion: nil)
     }
 }

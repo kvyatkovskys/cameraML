@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		652E92185C4F2E47BD8B82DA /* Pods_CameraMLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */; };
+		8B0AF29A1FABAD17008DDEB0 /* AppInjections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AF2991FABAD17008DDEB0 /* AppInjections.swift */; };
+		8B0AF29B1FABAD17008DDEB0 /* AppInjections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0AF2991FABAD17008DDEB0 /* AppInjections.swift */; };
 		8B23CAA51F00F9080024679D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA41F00F9080024679D /* AppDelegate.swift */; };
 		8B23CAA71F00F9080024679D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B23CAA61F00F9080024679D /* MainViewController.swift */; };
 		8B23CAAC1F00F9080024679D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B23CAAB1F00F9080024679D /* Assets.xcassets */; };
@@ -50,6 +52,7 @@
 		45D2796211E27E6E0DD3E325 /* Pods-CameraMLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraMLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CameraMLTests/Pods-CameraMLTests.debug.xcconfig"; sourceTree = "<group>"; };
 		50041F8B6E4B1E98E2797CFC /* Pods-CameraML.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraML.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CameraML/Pods-CameraML.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE63E9437E8F2B3D6BA3FAF /* Pods_CameraMLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CameraMLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B0AF2991FABAD17008DDEB0 /* AppInjections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjections.swift; sourceTree = "<group>"; };
 		8B1527601F03EE2E0036B4E2 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 		8B23CAA11F00F9080024679D /* CameraML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B23CAA41F00F9080024679D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 			children = (
 				8B23CAA41F00F9080024679D /* AppDelegate.swift */,
 				8B23CAC61F00FF1E0024679D /* Router.swift */,
+				8B0AF2991FABAD17008DDEB0 /* AppInjections.swift */,
 				8B23CAA61F00F9080024679D /* MainViewController.swift */,
 				8BB9C95D1FA9FBBC00553880 /* PhotoLibrary.swift */,
 				8BD5271F1F0247EB00BE97C6 /* Camera Controller */,
@@ -556,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB9C93F1FA9D24500553880 /* VGG16.mlmodel in Sources */,
+				8B0AF29A1FABAD17008DDEB0 /* AppInjections.swift in Sources */,
 				8B23CAC71F00FF1E0024679D /* Router.swift in Sources */,
 				8BD527191F0247A800BE97C6 /* Color-Extension.swift in Sources */,
 				8B23CAC51F00F9580024679D /* CameraController.swift in Sources */,
@@ -580,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB9C9481FA9D81A00553880 /* VGG16.mlmodel in Sources */,
+				8B0AF29B1FABAD17008DDEB0 /* AppInjections.swift in Sources */,
 				8BB9C9491FA9D81A00553880 /* Router.swift in Sources */,
 				8BB9C94A1FA9D81A00553880 /* Color-Extension.swift in Sources */,
 				8BB9C94B1FA9D81A00553880 /* CameraController.swift in Sources */,

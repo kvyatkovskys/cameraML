@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
+typealias Dependencies = HasLookPhotoProvider
+
 protocol LookPhotoLibraryDelegate: class {
     func choosePhoto(image: UIImage)
 }
@@ -77,9 +79,9 @@ final class LookPhotoViewController: UIViewController {
         super.updateViewConstraints()
     }
     
-    init(image: UIImage, delegate: LookPhotoLibraryDelegate) {
-        self.image = image
-        self.delegate = delegate
+    init(_ dependeces: Dependencies) {
+        self.image = dependeces.image
+        self.delegate = dependeces.delegate
         super.init(nibName: nil, bundle: nil)
     }
     
